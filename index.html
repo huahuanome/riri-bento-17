@@ -1,0 +1,206 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#193f35"><title>日日便當｜線上點餐</title><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#faf8f1;color:#203c32;font:16px/1.6 system-ui,"Noto Sans TC",sans-serif}button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:white;border:1px solid #cccabb;border-radius:9px;min-height:44px;padding:8px 14px}button:hover{filter:brightness(.95)}button:focus-visible,a:focus-visible{outline:3px solid #db803a;outline-offset:3px}button:disabled{opacity:.5;cursor:default}h1,h2,h3,p{margin:0}h1,h2,h3,.brand strong{font-family:Georgia,"Noto Serif TC","Songti TC","PMingLiU",serif}header{background:#183e34;color:#fffaf0}nav,.wrap{width:min(calc(100% - 48px),1160px);margin:auto}nav{height:76px;display:flex;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;margin-right:auto}.brand svg{width:42px;height:42px}.brand strong{font-size:24px;letter-spacing:2px}.plain{background:none;color:inherit;border:0}.bag{display:flex;gap:8px;align-items:center;color:#193f35;background:#f8f2de;border:0;font-weight:700}.bag svg{width:21px}.bag b{border-radius:99px;background:#193f35;color:white;padding:0 7px;font:700 14px/22px system-ui}.wrap{padding-top:26px}.hero{isolation:isolate;position:relative;overflow:hidden;background:#e6edd8;border:1px solid #c8d2b9;border-radius:16px;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:275px}.lead{padding:34px 0 34px clamp(20px,5vw,72px);z-index:1}.eyebrow,.category{color:#9e432a;font-weight:750;letter-spacing:.13em;font-size:14px}.hero h1{font-size:clamp(36px,4.8vw,66px);line-height:1.2;letter-spacing:.06em;margin:10px 0 14px}.lead p{color:#445c46}.heroArt{position:relative;align-self:stretch;background:repeating-linear-gradient(-45deg,transparent 0 12px,#bbcab54d 12px 13px);display:grid;place-items:center;clip-path:polygon(10% 0,100% 0,100% 100%,0 100%)}.heroArt svg{width:90%;height:285px;transform:rotate(-8deg);filter:drop-shadow(3px 10px 6px #53614739)}.sectionHead{margin:32px 0 18px;display:flex;gap:12px;align-items:baseline;justify-content:space-between}.sectionHead h2{font-size:32px}.muted,small{color:#5f6b61}#tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}#tabs button{background:transparent;border-radius:30px}#tabs button[aria-pressed=true],.primary{background:#245344;color:white;border-color:#245344}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{overflow:hidden;display:flex;flex-direction:column;padding:0;text-align:left;border:1px solid #d8d6ca;border-radius:14px;background:#fffdf8}.pic{width:100%;background:var(--bg);display:grid;place-items:center}.pic svg{width:86%;height:172px;filter:drop-shadow(1px 5px 3px #53402d25)}.cardText{width:100%;padding:18px 20px}.cardText h3{font-size:23px}.cardText p{font-size:15px;color:#596358;margin:3px 0 14px}.bottom,.row{display:flex;gap:10px;align-items:center;justify-content:space-between}.bottom{border-top:1px dashed #d3d5c4;padding-top:12px}.price{font-weight:bold;color:#924329}.plus{width:32px;height:32px;text-align:center;line-height:30px;border-radius:50%;background:#e9efdf;font-size:23px}footer{border-top:1px solid #d5d7c8;margin:38px auto 0;padding:22px;text-align:center;color:#5d685d;font-size:14px}
+dialog{border:1px solid #d0d3c2;border-radius:16px;background:#fffdf6;color:#213e34;width:min(94vw,520px);padding:0;max-height:90dvh;box-shadow:0 24px 80px #12261b40}dialog::backdrop{background:#10282091}.dialogHead{position:sticky;top:0;background:#fffdf6;border-bottom:1px solid #dfdfd1;z-index:2;padding:14px 20px}.dialogHead h2{font-size:22px}.inside{padding:18px 20px}.inside .pic{border-radius:12px;margin-bottom:12px}fieldset{margin:16px 0;padding:0;border:0}legend,.field{font-weight:700}.choices{display:flex;gap:8px;flex-wrap:wrap}.choices label{display:flex;gap:6px;align-items:center;border:1px solid #cbd0c3;border-radius:8px;min-height:44px;padding:6px 9px}.choices label:has(:checked){background:#ecf2e2;border-color:#668069}input{accent-color:#245344}.field{display:block;margin:14px 0}.field input,select{border:1px solid #aeb9a8;background:#fff;color:#213e34;border-radius:7px;min-height:44px;max-width:100%;padding:8px}.field input{display:block;width:100%;margin-top:4px}.primary{font-weight:700}.wide{width:100%;margin-top:12px}.step{display:flex;align-items:center;gap:10px}.step button{min-width:44px}.line{padding:14px 0;border-bottom:1px dashed #c7caba}.line small{display:block}.order{padding:18px;border:1px solid #c8d0c1;background:#fffdf7;border-radius:12px;margin:14px 0}.order h3{overflow-wrap:anywhere}.error{color:#a03a26;font-weight:700}.notice{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#193f35;color:white;border-radius:8px;padding:9px 18px;z-index:4;pointer-events:none}.notice:empty{display:none}[hidden]{display:none!important}.empty{padding:26px 0;text-align:center}
+@media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{min-height:220px}.heroArt svg{height:220px}}
+@media(max-width:590px){nav,.wrap{width:calc(100% - 28px)}nav{gap:2px;height:64px}.brand{gap:5px}.brand svg{width:34px}.brand strong{font-size:19px}.plain,.bag{font-size:14px;padding:7px 8px}.wrap{padding-top:14px}.hero{min-height:155px;grid-template-columns:56% 44%}.lead{padding:17px 0 17px 15px}.lead p{font-size:14px}.hero h1{font-size:32px;margin:6px 0}.heroArt svg{height:150px;width:115%}.eyebrow{font-size:12px}.sectionHead{margin:22px 0 12px}.sectionHead h2{font-size:27px}#tabs{gap:5px}#tabs button{padding:6px 10px;font-size:14px}.cards{grid-template-columns:1fr;gap:12px}.card{display:grid;grid-template-columns:32% 1fr;align-items:stretch}.pic svg{width:100%;height:112px}.cardText{padding:11px 12px}.cardText h3{font-size:20px}.cardText p{margin:2px 0 6px;font-size:14px}.bottom{padding-top:5px}.plus{width:26px;height:26px;line-height:25px}.inside .pic svg{height:155px}.order .row{flex-wrap:wrap}}
+</style></head><body><header><nav><a class="brand" href="#" aria-label="日日便當首頁"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="12" fill="#f4ddac"/><g fill="none" stroke="#224639" stroke-width="2.8" stroke-linecap="round"><path d="M9 24h30l-4 11H14zM11 20q13-12 26 0zM20 13q3-6 7 0"/></g><circle cx="33" cy="12" r="4" fill="#c8623d"/></svg><strong>日日便當</strong></a><button class="plain" id="adminBtn">店家後台</button><button class="bag" id="bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16l-1 13H5zM8 9V7a4 4 0 0 1 8 0v2"/></svg>購物車 <b id="count">0</b></button></nav></header>
+<main class="wrap"><section id="shop"><div class="hero"><div class="lead"><span class="eyebrow">台式便當專門店</span><h1>日日便當</h1><p>選一道主菜，配上喜歡的飯與兩樣小菜。</p></div><div class="heroArt" id="heroArt" aria-hidden="true"></div></div><div class="sectionHead"><h2>點餐菜單</h2><span class="muted" id="results"></span></div><div id="tabs" aria-label="餐點分類"></div><div class="cards" id="cards"></div></section><section id="admin" hidden></section></main><footer>日日便當 ｜ 資通四勤 121271041 張峻曄</footer><dialog id="modal"><div class="row dialogHead"><h2 id="heading"></h2><button id="close" aria-label="關閉視窗">✕</button></div><div class="inside" id="inside"></div></dialog><div class="notice" id="notice" role="status"></div><script>
+// The food is drawn in tray coordinates, so every illustration scales cleanly.
+function bentoArt(index) {
+  const names = ['古早味滷排骨', '香酥炸排骨', '蜜汁烤排骨', '玫瑰油雞腿', '蒜香脆皮雞腿', '三杯雞腿', '醬燒厚豆腐', '香煎杏鮑菇', '南瓜時蔬'];
+  const path = (d, fill, stroke = 'none', width = 1) =>
+    `<path d="${d}" fill="${fill}" stroke="${stroke}" stroke-width="${width}" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const oval = (cx, cy, rx, ry, fill, rotation = 0) =>
+    `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${fill}" transform="rotate(${rotation} ${cx} ${cy})"/>`;
+  const group = (transform, contents) => `<g transform="${transform}">${contents}</g>`;
+  const rounded = (x,y,w,h,r,fill,stroke='none',sw=1) =>
+    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}"/>`;
+  // A repeatable distribution gives grains, seasoning and breading hand-drawn variation.
+  function scatter(count, cx, cy, rx, ry, paint) {
+    return Array.from({length: count}, (_, k) => {
+      const angle = k * 2.39996 + index * .2;
+      const radius = Math.sqrt((k + .5) / count);
+      return paint(+(cx + Math.cos(angle) * rx * radius).toFixed(2),
+        +(cy + Math.sin(angle) * ry * radius).toFixed(2), k);
+    }).join('');
+  }
+  function leaf(x, y, angle, scale = 1) {
+    return group(`translate(${x} ${y}) rotate(${angle}) scale(${scale})`,
+      path('M0 0Q-17 -5 -15 -18Q-4 -21 0 0Z','#46833f') +
+      path('M-2 -3L-11 -14','none','#91b461',1.3));
+  }
+  function scallions(x, y) {
+    return group(`translate(${x} ${y})`,
+      [[0,0,-18],[6,2,15],[-5,5,45],[3,-6,-32]].map(([sx,sy,a]) =>
+        oval(sx,sy,2.9,1.5,'#497a42',a) + oval(sx,sy,1.4,.6,'#b4c878',a)).join(''));
+  }
+  function broccoli(x, y, a) {
+    return group(`translate(${x} ${y}) rotate(${a})`,
+      path('M-3 12L-3 1L-10 -4L-8 -6L-1 -3L1 -10L4 -9L3 -2L9 -7L11 -5L4 2L3 13Z','#abbb67','#738d4f') +
+      [[-9,-5],[-4,-10],[2,-11],[8,-8],[4,-4],[-3,-5]].map(([bx,by],k) =>
+        oval(bx,by,6.6,5.5,['#43723f','#508746','#639646'][k%3])+
+        oval(bx-1.6,by-2,2,.9,'#8eae5d',-20)).join(''));
+  }
+  function egg(x,y) {
+    return group(`translate(${x} ${y}) rotate(-22)`,
+      path('M-15 -1C-15 -10 -6 -15 4 -14C14 -13 18 -5 15 3C10 16 -14 16 -15 -1Z','#ba884e','#9b7345') +
+      oval(0,-1,14.3,11.5,'#fff2c9') + oval(1,-1,7.8,7.1,'#e9a033') +
+      path('M-4 -3Q-3 -7 2 -7','none','#fbc86a',2));
+  }
+  const porkOutline = 'M-48 -10Q-48 -27 -32 -33Q-18 -41 -3 -37Q12 -39 26 -30Q43 -26 47 -12Q54 1 41 15Q31 27 14 30Q-7 37 -24 28Q-42 24 -48 10Q-53 0 -48 -10Z';
+  function pork(style) {
+    const palette = [['#a96035','#754127','#d38950'],['#d89a43','#995b2c','#f2c77b'],['#a54b2d','#71371f','#e18b54']][style];
+    return group('translate(112 101) rotate(-14)',
+      group('translate(1 4)', path(porkOutline, palette[1])) +
+      path(porkOutline, palette[0], palette[1],2) +
+      path('M-44 -10Q-44 -26 -26 -30Q-11 -37 2 -33M10 -32Q31 -29 40 -18','none',palette[2],3) +
+      (style === 0 ? [
+        path('M-36 -13Q-13 -23 13 -21M-33 -5Q-8 -15 24 -14M-21 12Q9 2 32 -2','none','#c88049',2.6),
+        path('M-35 15Q-6 21 18 10M-28 23Q-3 26 11 20','none','#8c4d2e',2),
+        scallions(18,-17)].join('') :
+       style === 1 ? scatter(138,0,-1,44,29,(x,y,k)=>path(`M${x} ${y}l${1+k%3} ${k%2?1:-1}`,'none',['#ac6d34','#efbf6d','#f4cb83'][k%3],1.8)) :
+        [Array.from({length:5},(_,k)=>path(`M${-38+k*14} ${-13-Math.sin(k)*9}q8 9 15 24`,'none','#74391f',2.8)).join(''),
+        path('M-36 -18Q-30 -25 -17 -27M16 21Q26 17 30 12','none','#edb076',2.7),
+        scatter(19,5,0,33,17,(x,y,k)=>oval(x,y,1.9,.85,'#f9dea0',k*24))].join('')));
+  }
+  const legOutline='M-47 18Q-51 11 -44 8L-27 -1Q-21 -5 -17 -17Q-11 -34 6 -38Q24 -45 40 -31Q53 -20 48 -2Q47 15 25 21Q10 25 -4 18Q-14 10 -23 14L-39 23Q-46 27 -47 18Z';
+  function leg(crispy) {
+    const skin = crispy?'#bd7536':'#dfb070';
+    return group('translate(112 102) rotate(-12)',
+      path('M-58 21Q-65 20 -61 13Q-58 9 -53 13L-44 11L-41 18L-51 21Q-52 28 -57 26Q-60 26 -58 21Z','#fae5b9','#b59a75',1.5) +
+      group('translate(1 4)',path(legOutline,'#945e36')) +
+      path(legOutline,skin,'#99683c',1.8) +
+      path('M-17 -12Q-9 -34 10 -34Q29 -38 39 -25','none',crispy?'#e5a452':'#f4cd8c',3.7) +
+      scatter(crispy?95:30,15,-10,29,22,(x,y,k)=>oval(x,y,1+k%3*.5,.8,crispy?['#a25729','#e6a753','#f1bd68'][k%3]:'#d49b5f',k*39)) +
+      path('M-33 5Q-24 2 -16 -7M26 15Q37 11 41 3','none','#a26a3b',2.2) +
+      (crispy ? scatter(8,-5,6,15,8,(x,y,k)=>oval(x,y,2.7,1.5,'#f4dc9b',k*33)) : scallions(22,-12)));
+  }
+  function cubes(tofu) {
+    const locations = tofu?[[80,87,-14],[118,78,9],[91,114,-5],[129,105,13]]:[[82,86,-12],[111,79,5],[138,84,20],[88,111,9],[121,107,-13]];
+    const cube = tofu?'M-16 -10L10 -12L17 -4L-7 6Z':'M-13 -6Q-15 -13 -4 -15Q7 -17 12 -10L17 -3Q13 7 0 7Q-10 7 -13 -6Z';
+    return locations.map(([x,y,a],k)=>group(`translate(${x} ${y}) rotate(${a})`,
+      tofu ? path('M-16 -10L-7 6L17 -4L17 7L-7 17L-16 1Z','#af6a39','#84532f',1.4)+
+        path('M-15 -7L-8 4L-8 12L-14 2Z','#f4d39a') : oval(1,5,17,10,'#834329')) +
+      group(`translate(${x} ${y}) rotate(${a})`,path(cube,tofu?'#db9954':['#ab5933','#c2763f'][k%2],'#9b5e34',1.2)+
+      path('M-9 -8L-2 -10L4 -10','none',tofu?'#f8cf88':'#e9a66b',2))).join('') +
+      (tofu?scallions(121,101):leaf(111,99,-45,.83)+leaf(113,99,55,.7)+leaf(135,117,80,.65));
+  }
+  function mushrooms() {
+    return [[77,94,-35],[106,88,-8],[132,94,17],[104,119,63],[136,119,68]].map(([x,y,a])=>
+      group(`translate(${x} ${y}) rotate(${a})`,
+        path('M-9 -8Q-8 -3 -11 9Q-11 20 -1 20Q11 20 10 11Q6 -2 7 -8Z','#ecd0a0','#a17b51',1.6)+
+        path('M-12 -9Q-10 -20 0 -21Q12 -21 14 -12Q14 -7 6 -6L-8 -6Q-15 -5 -12 -9Z','#ac794f','#805a3e',1.4)+
+        path('M-6 7L6 3M-6 13L6 9','none','#c18b59',2.3))).join('')+scallions(101,108);
+  }
+  function pumpkin() {
+    return [[81,92,-25],[112,85,2],[135,101,34],[99,119,73]].map(([x,y,a])=>
+      group(`translate(${x} ${y}) rotate(${a})`,
+        path('M-17 -15Q-20 14 9 22L16 13Q-7 10 -9 -12Z','#476a42','#526b3c',1.5)+
+        path('M-13 -15Q-12 10 12 18L20 6Q1 2 -2 -15Z','#e99b36','#ba7f33',1.3)+
+        path('M-8 -11Q-7 2 0 7','none','#ffcf65',3))).join('')+leaf(132,122,110,.8);
+  }
+  const main = index<3?pork(index):index<5?leg(index===4):index<7?cubes(index===6):index===7?mushrooms():pumpkin();
+  const rice = rounded(47,45,120,103,19,'#e4d9bb') +
+    rounded(49,44,116,100,19,'#fff4d7') +
+    scatter(134,107,93,54,45,(x,y,k)=>oval(x,y,3.1,1.2,k%4===0?'#e6d9b8':'#fffbed',k*28));
+  const sideTop = broccoli(197,73,-24)+broccoli(217,70,17)+broccoli(207,80,-9);
+  const carrot = Array.from({length:8},(_,k)=>group(`translate(${181+k*5.2} ${112+(k%3)*4}) rotate(${-18+(k%4)*10})`,rounded(-2,-12,4.4,24,2,'#dc8141','#cc7738',.6))).join('');
+  const sideBottom = carrot+(index<6?egg(212,123):broccoli(214,126,69));
+  const tray = rounded(34,34,209,133,26,'#907957','#71634e',2) +
+    rounded(33,29,209,132,25,'#e6dbc0','#806f54',2.2) +
+    rounded(37,33,201,124,23,'#fff9e5','#d4c5a5',1.2)+
+    rounded(43,39,128,113,21,'#c4b498','#ab9a7d')+
+    rounded(175,40,57,54,15,'#e3d5b8','#b6a488',1.2)+
+    rounded(175,98,57,54,15,'#e3d5b8','#b6a488',1.2)+rice+sideTop+sideBottom+main;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278 194" role="img" aria-label="${names[index]}">${oval(141,150,103,13,'#27382118',-6)}${group('rotate(-8 139 99)',tray)}</svg>`;
+}
+const dishes = [
+ ['古早味滷排骨',105,'醬香慢滷，厚切排骨吸飽滷汁。'],
+ ['香酥炸排骨',110,'薄裹地瓜粉，金黃酥殼鎖住肉汁。'],
+ ['蜜汁烤排骨',120,'刷上蜂蜜醬汁，烤出焦糖色澤。'],
+ ['玫瑰油雞腿',115,'酒香浸雞，搭配清爽的蔥油。'],
+ ['蒜香脆皮雞腿',125,'蒜泥入味，煎至雞皮香脆。'],
+ ['三杯雞腿',120,'麻油、醬油與米酒收汁，撒上九層塔。'],
+ ['醬燒厚豆腐',95,'厚切豆腐煎香，裹上甘甜醬汁。'],
+ ['香煎杏鮑菇',100,'杏鮑菇切出花紋，乾煎後撒上胡椒。'],
+ ['南瓜時蔬',95,'烤南瓜搭配時蔬，吃得到蔬菜原味。']
+];
+const categories=['排骨便當','雞腿便當','素食便當'];
+const sides=['清炒高麗菜','胡麻四季豆','滷海帶'];
+const colors=['#eee4cf','#f1e3cd','#e6e9d8','#e2eadd','#efe1cb','#e9dfce','#e7e6d4','#e6e4d9','#f3e5c9'];
+const $=id=>document.getElementById(id);
+const modal=$('modal'),inside=$('inside');
+modal.setAttribute('aria-labelledby','heading');
+const key=name=>'riribento17.v1.'+name;
+const read=name=>JSON.parse(localStorage.getItem(key(name))||'[]');
+const save=(name,data)=>localStorage.setItem(key(name),JSON.stringify(data));
+const money=n=>'NT$ '+n.toLocaleString('zh-TW');
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const subtotal=x=>x.qty*x.unit;
+const sum=items=>items.reduce((n,x)=>n+subtotal(x),0);
+const details=x=>[x.rice,...x.sides].join('・');
+const art=i=>'<div class="pic" style="--bg:'+colors[i]+'">'+bentoArt(i)+'</div>';
+let selected=-1, toastTimer;
+function toast(text){$('notice').textContent=text;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('notice').textContent='',2000)}
+function show(title,html){$('heading').textContent=title;inside.innerHTML=html;if(!modal.open)modal.showModal();modal.scrollTop=0}
+$('close').onclick=()=>modal.close();
+modal.onclick=e=>{if(e.target===modal){const b=modal.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)modal.close()}};
+function menu(){
+ $('tabs').innerHTML=['全部',...categories].map((c,i)=>'<button data-cat="'+(i-1)+'" aria-pressed="'+(selected===i-1)+'">'+c+'</button>').join('');
+ const ids=dishes.map((_,i)=>i).filter(i=>selected<0||Math.floor(i/3)===selected);
+ $('results').textContent='共 '+ids.length+' 道便當';
+ $('cards').innerHTML=ids.map(i=>`<button class="card" data-dish="${i}" aria-label="選購${dishes[i][0]}">${art(i)}<div class="cardText"><h3>${dishes[i][0]}</h3><p>${dishes[i][2]}</p><div class="bottom"><span class="price">${money(dishes[i][1])}</span><span class="plus" aria-hidden="true">＋</span></div></div></button>`).join('');
+}
+$('tabs').onclick=e=>{if(e.target.dataset.cat!==undefined){selected=Number(e.target.dataset.cat);menu();$('tabs').querySelector('[aria-pressed=true]').focus()}};
+$('cards').onclick=e=>{const card=e.target.closest('[data-dish]');if(card)customize(Number(card.dataset.dish))};
+function updateCount(){const n=read('cart').reduce((s,x)=>s+x.qty,0);$('count').textContent=n}
+function customize(i){
+ const [name,price,desc]=dishes[i];let qty=1;
+ show(name,art(i)+`<p>${desc}</p><form id="custom"><fieldset><legend>飯種</legend><div class="choices"><label><input type="radio" name="rice" value="白飯" checked>白飯</label><label><input type="radio" name="rice" value="五穀飯">五穀飯 +$10</label></div></fieldset><fieldset><legend>配菜三選二</legend><div class="choices">${sides.map(s=>`<label><input type="checkbox" name="side" value="${s}">${s}</label>`).join('')}</div></fieldset><div class="row"><b>數量</b><div class="step"><button type="button" id="less" aria-label="減少數量">−</button><output id="qty"></output><button type="button" id="more" aria-label="增加數量">＋</button></div></div><p class="error" id="sideError" role="alert"></p><button class="primary wide" id="add"></button></form>`);
+ const form=$('custom'),unit=()=>price+(form.elements.rice.value==='五穀飯'?10:0);
+ const picks=()=>Array.from(form.querySelectorAll('[name=side]:checked'),x=>x.value);
+ function refresh(){const full=picks().length===2;form.querySelectorAll('[name=side]').forEach(x=>x.disabled=full&&!x.checked);$('less').disabled=qty===1;$('more').disabled=qty>=99;$('qty').textContent=qty;$('add').textContent='加入購物車　'+money(unit()*qty)}
+ $('less').onclick=()=>{qty--;refresh()};$('more').onclick=()=>{qty++;refresh()};form.onchange=()=>{$('sideError').textContent='';refresh()};refresh();
+ form.onsubmit=e=>{e.preventDefault();if(picks().length!==2){$('sideError').textContent='請選擇兩樣配菜。';return}const cart=read('cart'),item={i,name,unit:unit(),rice:form.elements.rice.value,sides:picks(),qty};
+ const same=cart.find(x=>x.i===i&&details(x)===details(item));if(same)same.qty+=qty;else cart.push(item);
+ save('cart',cart);updateCount();modal.close();toast('已加入購物車')};
+}
+function cartView(){
+ const cart=read('cart');
+ if(!cart.length){show('購物車','<p class="empty">購物車裡還沒有便當。</p><button class="primary wide" id="browse">回菜單選餐</button>');$('browse').onclick=()=>modal.close();return}
+ show('購物車',cart.map((x,j)=>`<div class="line"><div class="row"><b>${x.name}</b><b>${money(subtotal(x))}</b></div><small>${details(x)}</small><div class="row"><div class="step"><button aria-label="減少${x.name}數量" data-change="-1" data-index="${j}" ${x.qty===1?'disabled':''}>−</button>${x.qty}<button aria-label="增加${x.name}數量" data-change="1" data-index="${j}">＋</button></div><button data-change="0" data-index="${j}">刪除</button></div></div>`).join('')+`<div class="row line"><b>合計</b><b>${money(sum(cart))}</b></div><button class="primary wide" id="next">填寫取餐資料</button>`);
+ inside.querySelectorAll('[data-change]').forEach(b=>b.onclick=()=>{const j=Number(b.dataset.index),d=Number(b.dataset.change);if(d)cart[j].qty+=d;else cart.splice(j,1);save('cart',cart);updateCount();cartView()});$('next').onclick=checkout;
+}
+function checkout(){
+ show('取餐資料',`<form id="checkout"><label class="field">姓名<input name="customer" maxlength="60" autocomplete="name" required></label><label class="field">手機號碼<input type="tel" name="phone" placeholder="09xxxxxxxx" autocomplete="tel" pattern="09[0-9]{8}" title="請輸入 09 開頭的 10 碼手機號碼" required></label><label class="field">取餐時間<input type="datetime-local" name="pickup" required></label><div class="row line"><b>到店付款</b><b>${money(sum(read('cart')))}</b></div><button class="primary wide">送出訂單</button><button type="button" class="wide" id="back">返回購物車</button></form>`);
+ const f=$('checkout');$('back').onclick=cartView;
+ f.oninput=e=>e.target.setCustomValidity('');
+ f.onsubmit=e=>{e.preventDefault();const customer=f.customer.value.trim();
+ if(!customer){f.customer.setCustomValidity('請填寫姓名');f.customer.reportValidity();return}
+ if(new Date(f.pickup.value)<=new Date()){f.pickup.setCustomValidity('請選擇未來的取餐時間');f.pickup.reportValidity();return}
+ const items=read('cart');if(!items.length){cartView();return}
+ const id='RR-'+Date.now().toString(36).toUpperCase()+'-'+Math.random().toString(36).slice(2,5).toUpperCase();
+ const order={id,time:new Date().toISOString(),customer,phone:f.phone.value,pickup:f.pickup.value,items,total:sum(items),status:'製作中'};
+ save('orders',[order,...read('orders')]);save('cart',[]);updateCount();show('訂單已送出',`<p>訂單編號 <strong>${id}</strong></p><p>取餐時間　${dateLabel(order.pickup)}</p><p class="line">到店付款　<strong>${money(order.total)}</strong></p><button class="primary wide" id="done">回到菜單</button>`);$('done').onclick=()=>modal.close()};
+}
+function dateLabel(s){return new Date(s).toLocaleString('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false})}
+const logged=()=>sessionStorage.getItem(key('admin'))==='yes';
+function login(){
+ show('店家登入','<form id="login"><label class="field">帳號<input name="account" autocomplete="username" required></label><label class="field">密碼<input name="pwd" type="password" autocomplete="current-password" required></label><p class="error" role="alert" id="err"></p><button class="primary wide">登入後台</button></form>');
+ $('login').onsubmit=e=>{e.preventDefault();const f=e.target;if(f.account.value!=='just'||f.pwd.value!=='just'){$('err').textContent='帳號或密碼錯誤';return}sessionStorage.setItem(key('admin'),'yes');modal.close();adminView()};
+}
+function shopView(){$('shop').hidden=false;$('admin').hidden=true;$('admin').innerHTML='';$('bag').hidden=false;$('adminBtn').textContent='店家後台'}
+function adminView(){
+ if(!logged()){shopView();login();return}
+ $('shop').hidden=true;$('admin').hidden=false;$('bag').hidden=true;$('adminBtn').textContent='返回菜單';
+ const orders=read('orders');
+ $('admin').innerHTML=`<div class="sectionHead"><h1>店家後台</h1><button id="logout">登出</button></div><p>訂單數 <b>${orders.length}</b>　｜　營業額 <b>${money(orders.reduce((n,o)=>n+o.total,0))}</b></p>`+(orders.length?orders.map(o=>`<article class="order"><div class="row"><h3>${o.id}</h3><label>訂單狀態 <select data-order="${o.id}">${['製作中','可取餐','已完成'].map(s=>`<option ${s===o.status?'selected':''}>${s}</option>`).join('')}</select></label></div><small>下單　${dateLabel(o.time)}</small><p><b>${escapeHtml(o.customer)}</b>　${escapeHtml(o.phone)}</p><p>取餐　${dateLabel(o.pickup)}</p>${o.items.map(x=>`<div class="line row"><div>${x.name} × ${x.qty}<small>${details(x)}</small></div><b>${money(subtotal(x))}</b></div>`).join('')}<p><b>到店付款　${money(o.total)}</b></p></article>`).join(''):'<p class="empty">目前還沒有訂單。</p>');
+ $('logout').onclick=()=>{sessionStorage.removeItem(key('admin'));shopView();toast('已登出')};
+ $('admin').onchange=e=>{if(!logged()){shopView();return}const current=read('orders'),o=current.find(o=>o.id===e.target.dataset.order);if(o){o.status=e.target.value;save('orders',current);toast('訂單狀態已更新')}};
+}
+$('adminBtn').onclick=()=>{if(!$('admin').hidden)shopView();else if(logged())adminView();else login()};
+document.querySelector('.brand').onclick=e=>{e.preventDefault();shopView();window.scrollTo(0,0)};
+$('bag').onclick=cartView;
+window.addEventListener('storage',e=>{if(e.key===key('cart')){updateCount();if(modal.open&&$('heading').textContent==='購物車')cartView()}if(e.key===key('orders')&&!$('admin').hidden)adminView()});
+$('heroArt').innerHTML=bentoArt(0);menu();updateCount();
+</script></body></html>
